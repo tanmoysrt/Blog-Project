@@ -1,7 +1,9 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
 
-def homepage(request,titile):
-    print("HI")
-    print(titile)
-    return render(request,"normaluser/app.html",{"titile":titile,"name":"tanmoy Sarkar"})
+
+def homepage(request):
+
+    data = "<h1>Hello World !!</h1>"
+    return render(request,"normaluser/app.html",{"data":data})
